@@ -1,5 +1,7 @@
 
 'use client';
+import { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   Card,
   CardContent,
@@ -8,9 +10,27 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { FlaskConical, Beaker, Recycle } from 'lucide-react';
-import { withProtected } from '@/hooks/use-auth';
+import { useAuth } from '@/hooks/use-auth';
 
 function ChemistryNotesPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!loading && (!user || user.role !== 'premium')) {
+      router.push('/premium?from=' + pathname);
+    }
+  }, [user, loading, router, pathname]);
+
+  if (loading || !user || user.role !== 'premium') {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="space-y-4 mb-12">
@@ -27,7 +47,7 @@ function ChemistryNotesPage() {
           <CardHeader>
              <div className="flex items-center gap-3">
               <Beaker className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Solutions & Electrochemistry</CardTitle>
+              <CardTitle>Solutions & Electrochemistry</CardTitle>
             </div>
             <CardDescription>Exploring the properties of solutions and electrochemical cells.</CardDescription>
           </CardHeader>
@@ -56,7 +76,7 @@ function ChemistryNotesPage() {
           <CardHeader>
             <div className="flex items-center gap-3">
               <Recycle className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">d- and f-Block Elements</CardTitle>
+              <CardTitle>d- and f-Block Elements</CardTitle>
             </div>
             <CardDescription>Studying the transition and inner transition metals.</CardDescription>
           </CardHeader>
@@ -82,7 +102,7 @@ function ChemistryNotesPage() {
           <CardHeader>
              <div className="flex items-center gap-3">
               <FlaskConical className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Organic Chemistry</CardTitle>
+              <CardTitle>Organic Chemistry</CardTitle>
             </div>
             <CardDescription>Focusing on reactions involving haloalkanes, alcohols, aldehydes, and more.</CardDescription>
           </CardHeader>
@@ -108,4 +128,4 @@ function ChemistryNotesPage() {
   );
 }
 
-export default withProtected(ChemistryNotesPage, 'premium');
+export default ChemistryNotesPage;

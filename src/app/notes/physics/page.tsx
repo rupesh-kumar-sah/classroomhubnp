@@ -1,5 +1,7 @@
 
 'use client';
+import { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   Card,
   CardContent,
@@ -8,9 +10,27 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { Atom, Zap, Magnet } from 'lucide-react';
-import { withProtected } from '@/hooks/use-auth';
+import { useAuth } from '@/hooks/use-auth';
 
 function PhysicsNotesPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!loading && (!user || user.role !== 'premium')) {
+      router.push('/premium?from=' + pathname);
+    }
+  }, [user, loading, router, pathname]);
+
+  if (loading || !user || user.role !== 'premium') {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="space-y-4 mb-12">
@@ -27,7 +47,7 @@ function PhysicsNotesPage() {
           <CardHeader>
              <div className="flex items-center gap-3">
               <Zap className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Electrostatics</CardTitle>
+              <CardTitle>Electrostatics</CardTitle>
             </div>
             <CardDescription>The study of stationary electric charges.</CardDescription>
           </CardHeader>
@@ -56,7 +76,7 @@ function PhysicsNotesPage() {
           <CardHeader>
             <div className="flex items-center gap-3">
               <Magnet className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Magnetic Effects of Current</CardTitle>
+              <CardTitle>Magnetic Effects of Current</CardTitle>
             </div>
             <CardDescription>Understanding the relationship between electricity and magnetism.</CardDescription>
           </CardHeader>
@@ -82,7 +102,7 @@ function PhysicsNotesPage() {
           <CardHeader>
              <div className="flex items-center gap-3">
               <Atom className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Modern Physics</CardTitle>
+              <CardTitle>Modern Physics</CardTitle>
             </div>
             <CardDescription>Delving into the world of quantum mechanics and nuclear physics.</CardDescription>
           </CardHeader>
@@ -109,4 +129,4 @@ function PhysicsNotesPage() {
   );
 }
 
-export default withProtected(PhysicsNotesPage, 'premium');
+export default PhysicsNotesPage;

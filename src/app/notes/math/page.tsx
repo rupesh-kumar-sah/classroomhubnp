@@ -1,5 +1,7 @@
 
 'use client';
+import { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   Card,
   CardContent,
@@ -8,9 +10,27 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { Sigma, Milestone, Combine } from 'lucide-react';
-import { withProtected } from '@/hooks/use-auth';
+import { useAuth } from '@/hooks/use-auth';
 
 function MathNotesPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!loading && (!user || user.role !== 'premium')) {
+      router.push('/premium?from=' + pathname);
+    }
+  }, [user, loading, router, pathname]);
+
+  if (loading || !user || user.role !== 'premium') {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="space-y-4 mb-12">
@@ -27,7 +47,7 @@ function MathNotesPage() {
           <CardHeader>
              <div className="flex items-center gap-3">
               <Milestone className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Calculus: Integration & Differentiation</CardTitle>
+              <CardTitle>Calculus: Integration & Differentiation</CardTitle>
             </div>
             <CardDescription>The backbone of modern mathematics and physics.</CardDescription>
           </CardHeader>
@@ -56,7 +76,7 @@ function MathNotesPage() {
           <CardHeader>
             <div className="flex items-center gap-3">
               <Combine className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Vectors and 3D Geometry</CardTitle>
+              <CardTitle>Vectors and 3D Geometry</CardTitle>
             </div>
             <CardDescription>Working with objects and spaces in three dimensions.</CardDescription>
           </CardHeader>
@@ -82,7 +102,7 @@ function MathNotesPage() {
           <CardHeader>
              <div className="flex items-center gap-3">
               <Sigma className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Probability</CardTitle>
+              <CardTitle>Probability</CardTitle>
             </div>
             <CardDescription>The mathematics of chance and uncertainty.</CardDescription>
           </CardHeader>
@@ -108,4 +128,4 @@ function MathNotesPage() {
   );
 }
 
-export default withProtected(MathNotesPage, 'premium');
+export default MathNotesPage;

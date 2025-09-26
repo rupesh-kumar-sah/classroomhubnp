@@ -1,5 +1,7 @@
 
 'use client';
+import { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   Card,
   CardContent,
@@ -8,9 +10,27 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { BookOpen, PenTool, Mic } from 'lucide-react';
-import { withProtected } from '@/hooks/use-auth';
+import { useAuth } from '@/hooks/use-auth';
 
 function EnglishNotesPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!loading && (!user || user.role !== 'premium')) {
+      router.push('/premium?from=' + pathname);
+    }
+  }, [user, loading, router, pathname]);
+
+  if (loading || !user || user.role !== 'premium') {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="space-y-4 mb-12">
@@ -27,7 +47,7 @@ function EnglishNotesPage() {
           <CardHeader>
              <div className="flex items-center gap-3">
               <BookOpen className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Literature: Flamingo & Vistas</CardTitle>
+              <CardTitle>Literature: Flamingo & Vistas</CardTitle>
             </div>
             <CardDescription>Summaries, character sketches, and theme analysis.</CardDescription>
           </CardHeader>
@@ -56,7 +76,7 @@ function EnglishNotesPage() {
           <CardHeader>
             <div className="flex items-center gap-3">
               <PenTool className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Writing Skills</CardTitle>
+              <CardTitle>Writing Skills</CardTitle>
             </div>
             <CardDescription>Mastering the formats for formal writing tasks.</CardDescription>
           </CardHeader>
@@ -82,7 +102,7 @@ function EnglishNotesPage() {
           <CardHeader>
              <div className="flex items-center gap-3">
               <Mic className="h-6 w-6 text-primary" />
-              <CardTitle className="font-headline">Reading Comprehension</CardTitle>
+              <CardTitle>Reading Comprehension</CardTitle>
             </div>
             <CardDescription>Techniques for unseen passages.</CardDescription>
           </CardHeader>
@@ -108,4 +128,4 @@ function EnglishNotesPage() {
   );
 }
 
-export default withProtected(EnglishNotesPage, 'premium');
+export default EnglishNotesPage;
