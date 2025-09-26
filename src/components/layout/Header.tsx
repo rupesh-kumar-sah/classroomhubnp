@@ -34,7 +34,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useAuth, AuthProvider } from "@/hooks/use-auth";
+import { useAuth } from "@/hooks/use-auth";
 import AuthModal from "@/components/auth/AuthModal";
 
 const navLinks = [
@@ -46,7 +46,7 @@ const navLinks = [
   { href: "/contact", label: "Contact", icon: Contact },
 ];
 
-function HeaderContent() {
+export function Header() {
   const pathname = usePathname();
   const { user, loading, logout } = useAuth();
   const [authModalOpen, setAuthModalOpen] = React.useState(false);
@@ -164,12 +164,4 @@ function HeaderContent() {
       />
     </>
   );
-}
-
-export function Header() {
-  return (
-    <AuthProvider>
-      <HeaderContent />
-    </AuthProvider>
-  )
 }
