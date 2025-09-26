@@ -109,6 +109,13 @@ export const codingCourses: Course[] = [
     image: getImage("webdev-1"),
     path: "/coding/webdev",
   },
+  {
+    id: 'dsa',
+    title: 'Data Structures & Algorithms',
+    description: 'Build a strong foundation in core computer science concepts.',
+    image: getImage('dsa-1'),
+    path: '/coding/dsa',
+  },
 ];
 
 export const premiumCourses: Course[] = [
@@ -154,3 +161,5 @@ export const dashboardData: {
     { id: "note-3", title: "The Solid State", subject: "Chemistry" },
   ],
 };
+
+    

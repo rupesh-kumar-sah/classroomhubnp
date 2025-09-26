@@ -9,19 +9,19 @@
     {
       "id": "physics-1",
       "description": "An abstract representation of physics concepts like atoms and orbits.",
-      "imageUrl": "https://images.unsplash.com/photo-1758314896569-b3639ee707c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMHBoeXNpY3N8ZW58MHx8fHwxNzU4ODQ5MTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1758314896569-b3639ee707c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMHBoeXNpY3N8ZW58MHx8fHwxNzU4ODQ5MTE4fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "abstract physics"
     },
     {
       "id": "chemistry-1",
       "description": "Colorful chemicals in beakers and test tubes.",
-      "imageUrl": "https://images.unsplash.com/photo-1694230155228-cdde50083573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGVtaXN0cnklMjBsYWJ8ZW58MHx8fHwxNzU4ODMwNjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1694230155228-cdde50083573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGVtaXN0cnklMjBsYWJ8ZW58MHx8fHwxNzU4ODMwNjUzfDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "chemistry lab"
     },
     {
       "id": "math-1",
       "description": "Mathematical formulas and graphs on a chalkboard.",
-      "imageUrl": "https://images.unsplash.com/photo-1509228468518-180dd4864904?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYXRoJTIwZm9ybXVsYXN8ZW58MHx8fHwxNzU4ODMwNjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1509228468518-180dd4864904?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYXRoJTIwZm9ybXVsYXN8ZW58MHx8fHwxNzU4ODMwNjUzfDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "math formulas"
     },
     {
@@ -33,7 +33,7 @@
     {
       "id": "english-1",
       "description": "A stack of classic literature books.",
-      "imageUrl": "https://images.unsplash.com/photo-1632220499127-5d9fa1d8f8d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsaXRlcmF0dXJlJTIwYm9va3N8ZW58MHx8fHwxNzU4ODc2ODYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1632220499127-5d9fa1d8f8d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsaXRlcmF0dXJlJTIwYm9va3N8ZW58MHx8fHwxNzU4ODc2ODYzfDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "literature books"
     },
     {
@@ -53,6 +53,12 @@
       "description": "HTML, CSS, and JavaScript code snippets side-by-side.",
       "imageUrl": "https://images.unsplash.com/photo-1624996752380-8ec242e0f85d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NTg4MDYzMzF8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "web development"
+    },
+    {
+      "id": "dsa-1",
+      "description": "Abstract visualization of data structures like trees and nodes.",
+      "imageUrl": "https://images.unsplash.com/photo-1551645824-d4b175a9630c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXRhJTIwc3RydWN0dXJlc3xlbnwwfHx8fDE3NTg5MTQ3Mzh8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "data structures"
     },
     {
       "id": "jee-1",
@@ -87,7 +93,7 @@
     {
       "id": "contact-hero",
       "description": "A person's hand holding a smartphone with contact icons.",
-      "imageUrl": "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb250YWN0JTIwdXN8ZW58MHx8fHwxNzE3MDgwODQzfDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb250YWN0JTIwdXN8ZW58MHx8fHwxNzE3MDgwODQzfDA&ixlib-rb-4.0.3&q=80&w=1080",
       "imageHint": "contact us"
     }
   ]
