@@ -41,7 +41,7 @@ export function Header() {
     return (
       <Link
         href={href}
-        key={label}
+        key={href}
         className={cn(
           "transition-colors hover:text-foreground",
           isActive ? "text-foreground" : "text-muted-foreground",
