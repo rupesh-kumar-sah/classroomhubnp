@@ -1,6 +1,6 @@
 import { CourseCard } from "@/components/shared/CourseCard";
 import { premiumCourses } from "@/lib/data";
-import { CheckCircle2, QrCode } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -8,11 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
 
 export default function PremiumPage() {
-  const esewaQR = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=esewa://pay?merchant_id=9824812753&merchant_name=Rupesh%20Kumar%20Sah";
-  const khaltiQR = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=khalti://pay?merchant_id=9824812753&merchant_name=Rupesh%20Kumar%20Sah";
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
@@ -68,12 +65,9 @@ export default function PremiumPage() {
            <Card>
             <CardHeader>
               <CardTitle className="font-headline">Pay with eSewa</CardTitle>
-              <CardDescription>Scan the QR code to pay.</CardDescription>
+              <CardDescription>Send payment to the details below.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-                <div className="flex items-center justify-center p-4 bg-muted/50 rounded-lg">
-                    <Image src={esewaQR} alt="eSewa QR Code" width={200} height={200} />
-                </div>
                 <div className="text-center">
                     <p className="text-lg font-semibold">Rupesh Kumar Sah</p>
                 </div>
@@ -83,12 +77,9 @@ export default function PremiumPage() {
            <Card>
             <CardHeader>
               <CardTitle className="font-headline">Pay with Khalti</CardTitle>
-              <CardDescription>Scan the QR code to pay.</CardDescription>
+              <CardDescription>Send payment to the details below.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-                <div className="flex items-center justify-center p-4 bg-muted/50 rounded-lg">
-                    <Image src={khaltiQR} alt="Khalti QR Code" width={200} height={200} />
-                </div>
                  <div className="text-center">
                     <p className="text-lg font-semibold">Rupesh Kumar Sah</p>
                 </div>
