@@ -50,7 +50,7 @@ export default function DashboardPage() {
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <TrendingUp className="h-6 w-6 text-primary" />
-                  <CardTitle className="font-headline">Your Progress</CardTitle>
+                  <CardTitle>Your Progress</CardTitle>
                 </div>
                 <CardDescription>
                   Completion status of your recent courses and subjects.
@@ -75,7 +75,7 @@ export default function DashboardPage() {
               <CardHeader>
                  <div className="flex items-center gap-3">
                   <Bookmark className="h-6 w-6 text-primary" />
-                  <CardTitle className="font-headline">Bookmarked Notes</CardTitle>
+                  <CardTitle>Bookmarked Notes</CardTitle>
                 </div>
                 <CardDescription>
                   Quickly access your saved notes and articles.

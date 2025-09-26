@@ -43,7 +43,7 @@ export default function ContactPage() {
                     <div className="space-y-6">
                          <Card>
                             <CardHeader>
-                                <CardTitle className="font-headline">Contact Information</CardTitle>
+                                <CardTitle>Contact Information</CardTitle>
                                 <CardDescription>Find my contact details below.</CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-4">
@@ -66,7 +66,7 @@ export default function ContactPage() {
                      <div>
                         <Card>
                             <CardHeader>
-                                <CardTitle className="font-headline">Send a Message</CardTitle>
+                                <CardTitle>Send a Message</CardTitle>
                                 <CardDescription>Fill out the form to get in touch.</CardDescription>
                             </CardHeader>
                             <CardContent>

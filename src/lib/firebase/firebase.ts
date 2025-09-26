@@ -13,24 +13,7 @@ const firebaseConfig = {
   "messagingSenderId": "471938808893"
 };
 
-function createFirebaseApp(config: any) {
-  const app = initializeApp(config);
-  return app;
-}
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
-function getFirebaseApp() {
-  if (getApps().length) {
-    return getApp();
-  }
-
-  if (!firebaseConfig) {
-    throw new Error('No Firebase config object provided.');
-  }
-
-  const app = createFirebaseApp(firebaseConfig);
-  return app;
-}
-
-export const app = getFirebaseApp();
 export const auth = getAuth(app);
 export const db = getFirestore(app);

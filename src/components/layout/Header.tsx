@@ -13,7 +13,6 @@ import {
   Sparkles,
   Contact,
   LogOut,
-  User as UserIcon,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
