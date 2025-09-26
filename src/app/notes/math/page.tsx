@@ -1,4 +1,5 @@
 
+'use client';
 import {
   Card,
   CardContent,
@@ -7,8 +8,9 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { Sigma, Milestone, Combine } from 'lucide-react';
+import { withProtected } from '@/hooks/use-auth';
 
-export default function MathNotesPage() {
+function MathNotesPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6">
       <div className="space-y-4 mb-12">
@@ -105,3 +107,5 @@ export default function MathNotesPage() {
     </div>
   );
 }
+
+export default withProtected(MathNotesPage, 'premium');
