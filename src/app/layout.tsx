@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { PT_Sans } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -11,23 +12,16 @@ export const metadata: Metadata = {
   description: "Your modern eLearning platform for Class 12 and coding.",
 };
 
-const ptSans = PT_Sans({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-pt-sans",
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={cn("dark", GeistSans.variable, GeistMono.variable)}>
       <body
         className={cn(
-          "min-h-screen bg-background font-body antialiased",
-          ptSans.variable
+          "min-h-screen bg-background font-body antialiased"
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
