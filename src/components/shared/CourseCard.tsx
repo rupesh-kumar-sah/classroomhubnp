@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Course } from "@/lib/data";
+import type { Course } from "@/lib/types";
 import {
   Card,
   CardContent,

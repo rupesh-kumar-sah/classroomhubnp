@@ -1,38 +1,5 @@
 import { PlaceHolderImages } from "./placeholder-images";
-
-export type Subject = {
-  id: string;
-  title: string;
-  description: string;
-  image: {
-    url: string;
-    hint: string;
-  };
-  path: string;
-};
-
-export type Course = {
-  id: string;
-  title: string;
-  description: string;
-  image: {
-    url: string;
-    hint: string;
-  };
-  path: string;
-  price?: string;
-};
-
-export type DashboardProgress = {
-  subject: string;
-  progress: number;
-};
-
-export type BookmarkedNote = {
-  id: string;
-  title: string;
-  subject: string;
-};
+import type { Subject, Course, DashboardProgress, BookmarkedNote } from './types';
 
 const getImage = (id: string) => {
   const image = PlaceHolderImages.find((img) => img.id === id);
@@ -161,5 +128,3 @@ export const dashboardData: {
     { id: "note-3", title: "The Solid State", subject: "Chemistry" },
   ],
 };
-
-    
