@@ -1,3 +1,88 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "A student studying at a desk with books and a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1514369118554-e20d93546b30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwc3R1ZHlpbmd8ZW58MHx8fHwxNzU4ODQwNDcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student studying"
+    },
+    {
+      "id": "physics-1",
+      "description": "An abstract representation of physics concepts like atoms and orbits.",
+      "imageUrl": "https://images.unsplash.com/photo-1758314896569-b3639ee707c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMHBoeXNpY3N8ZW58MHx8fHwxNzU4ODQ5MTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract physics"
+    },
+    {
+      "id": "chemistry-1",
+      "description": "Colorful chemicals in beakers and test tubes.",
+      "imageUrl": "https://images.unsplash.com/photo-1694230155228-cdde50083573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGVtaXN0cnklMjBsYWJ8ZW58MHx8fHwxNzU4ODMwNjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chemistry lab"
+    },
+    {
+      "id": "math-1",
+      "description": "Mathematical formulas and graphs on a chalkboard.",
+      "imageUrl": "https://images.unsplash.com/photo-1509228468518-180dd4864904?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYXRoJTIwZm9ybXVsYXN8ZW58MHx8fHwxNzU4ODMwNjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "math formulas"
+    },
+    {
+      "id": "biology-1",
+      "description": "A microscopic view of plant cells.",
+      "imageUrl": "https://images.unsplash.com/photo-1754149613860-f6feba67550c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxiaW9sb2d5JTIwY2VsbHN8ZW58MHx8fHwxNzU4ODc5NDQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "biology cells"
+    },
+    {
+      "id": "english-1",
+      "description": "A stack of classic literature books.",
+      "imageUrl": "https://images.unsplash.com/photo-1632220499127-5d9fa1d8f8d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsaXRlcmF0dXJlJTIwYm9va3N8ZW58MHx8fHwxNzU4ODc2ODYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "literature books"
+    },
+    {
+      "id": "python-1",
+      "description": "Python code on a dark-themed editor.",
+      "imageUrl": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxweXRob24lMjBjb2RlfGVufDB8fHx8MTc1ODg1NTk2MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "python code"
+    },
+    {
+      "id": "cpp-1",
+      "description": "C++ code on a light-themed editor, showing complex algorithms.",
+      "imageUrl": "https://images.unsplash.com/photo-1753998943619-b9cd910887e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YyUyMCUyMCUyMGNvZGV8ZW58MHx8fHwxNzU4ODIwMTM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "c++ code"
+    },
+    {
+      "id": "webdev-1",
+      "description": "HTML, CSS, and JavaScript code snippets side-by-side.",
+      "imageUrl": "https://images.unsplash.com/photo-1624996752380-8ec242e0f85d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NTg4MDYzMzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "web development"
+    },
+    {
+      "id": "jee-1",
+      "description": "A graphic representing engineering and technology for JEE exams.",
+      "imageUrl": "https://images.unsplash.com/photo-1614492898637-435e0f87cef8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlbmdpbmVlcmluZyUyMGV4YW18ZW58MHx8fHwxNzU4OTE0NzM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "engineering exam"
+    },
+    {
+      "id": "neet-1",
+      "description": "A graphic representing medical symbols for NEET exams.",
+      "imageUrl": "https://images.unsplash.com/photo-1682365114794-14b870355d21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtZWRpY2FsJTIwZXhhbXxlbnwwfHx8fDE3NTg5MTQ3Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical exam"
+    },
+    {
+      "id": "sat-1",
+      "description": "A graphic representing international university admissions for SAT exams.",
+      "imageUrl": "https://images.unsplash.com/photo-1638023966383-786e9349bfc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx1bml2ZXJzaXR5JTIwYWRtaXNzaW9ufGVufDB8fHx8MTc1ODkxNDczOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university admission"
+    },
+    {
+      "id": "dashboard-hero",
+      "description": "An abstract dashboard with charts and graphs.",
+      "imageUrl": "https://images.unsplash.com/photo-1748439146117-31978164865d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXNoYm9hcmQlMjBjaGFydHN8ZW58MHx8fHwxNzU4ODc5ODk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dashboard charts"
+    },
+    {
+      "id": "search-hero",
+      "description": "Magnifying glass over a grid of abstract icons.",
+      "imageUrl": "https://images.unsplash.com/photo-1663579973124-61c113e1521c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZWFyY2glMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzU4OTE0NzM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "search interface"
+    }
+  ]
 }
