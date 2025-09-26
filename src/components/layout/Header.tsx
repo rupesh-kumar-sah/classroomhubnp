@@ -61,7 +61,7 @@ export function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <GraduationCap className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block font-headline">
-              ClassroomHub
+              ClassroomHubNP
             </span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -84,7 +84,7 @@ export function Header() {
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
                   <GraduationCap className="h-6 w-6 text-primary" />
-                  <span className="font-bold font-headline">ClassroomHub</span>
+                  <span className="font-bold font-headline">ClassroomHubNP</span>
                 </Link>
                 {navLinks.map(({ href, label, icon }) => (
                   <SheetClose asChild key={href}>

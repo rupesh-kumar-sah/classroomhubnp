@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "ClassroomHub",
+  title: "ClassroomHubNP",
   description: "Your modern eLearning platform for Class 12 and coding.",
 };
 

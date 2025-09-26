@@ -34,7 +34,7 @@ const prompt = ai.definePrompt({
   name: 'intelligentSearchPrompt',
   input: {schema: IntelligentSearchInputSchema},
   output: {schema: IntelligentSearchOutputSchema},
-  prompt: `You are a search assistant for an eLearning platform, ClassroomHub, which provides Class 12 notes and coding resources.
+  prompt: `You are a search assistant for an eLearning platform, ClassroomHubNP, which provides Class 12 notes and coding resources.
 
   Based on the user's query, provide a list of relevant results.
 

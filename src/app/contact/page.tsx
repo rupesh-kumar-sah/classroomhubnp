@@ -49,7 +49,7 @@ export default function ContactPage() {
                                     <User className="h-6 w-6 text-primary" />
                                     <div>
                                         <p className="font-semibold">Rupesh Kumar Sah</p>
-                                        <p className="text-sm text-muted-foreground">ClassroomHub Admin</p>
+                                        <p className="text-sm text-muted-foreground">ClassroomHubNP Admin</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
