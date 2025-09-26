@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PT_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -10,6 +11,12 @@ export const metadata: Metadata = {
   description: "Your modern eLearning platform for Class 12 and coding.",
 };
 
+const ptSans = PT_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-pt-sans",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,17 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-body antialiased",
+          ptSans.variable
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
