@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Link from "next/link";
@@ -10,6 +11,7 @@ import {
   Menu,
   SearchIcon,
   Sparkles,
+  Contact,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -28,6 +30,7 @@ const navLinks = [
   { href: "/premium", label: "Premium", icon: Sparkles },
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/search", label: "Search", icon: SearchIcon },
+  { href: "/contact", label: "Contact", icon: Contact },
 ];
 
 export function Header() {
