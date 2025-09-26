@@ -36,9 +36,16 @@ export type BookmarkedNote = {
 
 const getImage = (id: string) => {
   const image = PlaceHolderImages.find((img) => img.id === id);
+  if (!image) {
+    console.warn(`Image with id "${id}" not found. Using placeholder.`);
+    return {
+      url: "https://picsum.photos/seed/placeholder/400/300",
+      hint: "placeholder",
+    };
+  }
   return {
-    url: image?.imageUrl || "https://picsum.photos/seed/placeholder/400/300",
-    hint: image?.imageHint || "placeholder",
+    url: image.imageUrl,
+    hint: image.imageHint,
   };
 };
 
