@@ -11,7 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { getAuth, updateProfile } from 'firebase/auth';
-import { Loader2 } from 'lucide-react';
+import { Loader2, ShieldCheck } from 'lucide-react';
 
 export default function ProfilePage() {
   const { user, loading } = useAuth();
@@ -62,8 +62,15 @@ export default function ProfilePage() {
             </Avatar>
             <CardTitle className="text-3xl font-headline">{user.displayName || 'User Profile'}</CardTitle>
             <CardDescription>{user.email}</CardDescription>
-            <div className="flex justify-center gap-2 mt-2">
-                <Badge variant={user.role === 'owner' ? 'default' : 'secondary'}>{user.role}</Badge>
+            <div className="flex justify-center gap-2 mt-4">
+                {user.role === 'owner' ? (
+                  <Badge variant="default" className="flex items-center gap-2">
+                    <ShieldCheck className="h-4 w-4" />
+                    <span>Owner</span>
+                  </Badge>
+                ) : (
+                  <Badge variant="secondary">{user.role}</Badge>
+                )}
             </div>
           </CardHeader>
           <CardContent>
