@@ -2,7 +2,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { onAuthStateChanged, User, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { onAuthStateChanged, User, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, UserCredential } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase/firebase';
 
@@ -13,17 +13,17 @@ export interface AuthUser extends User {
 interface AuthContextType {
   user: AuthUser | null;
   loading: boolean;
-  login: (email: string, password: string) => Promise<any>;
-  signup: (email: string, password: string) => Promise<any>;
-  logout: () => Promise<any>;
+  login: (email: string, password: string) => Promise<UserCredential>;
+  signup: (email: string, password: string) => Promise<UserCredential>;
+  logout: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
   loading: true,
-  login: async () => {},
-  signup: async () => {},
-  logout: async () => {},
+  login: async () => { throw new Error('Login function not implemented'); },
+  signup: async () => { throw new Error('Signup function not implemented'); },
+  logout: async () => { throw new Error('Logout function not implemented'); },
 });
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -40,14 +40,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         if (userDoc.exists()) {
           userRole = userDoc.data()?.role || 'user';
         } else {
+          // This case handles users who signed up before the role system was in place
+          // or if the doc creation failed.
           userRole = firebaseUser.email === 'rsah0123456@gmail.com' ? 'owner' : 'user';
-          const newUser = {
+          await setDoc(userDocRef, {
             uid: firebaseUser.uid,
             email: firebaseUser.email,
             role: userRole,
             createdAt: new Date(),
-          };
-          await setDoc(userDocRef, newUser);
+          }, { merge: true });
         }
         setUser({ ...firebaseUser, role: userRole });
       } else {
@@ -68,12 +69,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const user = userCredential.user;
     const userDocRef = doc(db, 'users', user.uid);
     const role = email === 'rsah0123456@gmail.com' ? 'owner' : 'user';
-    return setDoc(userDocRef, {
+    await setDoc(userDocRef, {
       uid: user.uid,
       email: user.email,
       role: role,
       createdAt: new Date(),
     });
+    // Return the full userCredential, as expected by the calling component
+    return userCredential;
   };
 
   const logout = () => {
