@@ -38,7 +38,8 @@ export default function ProfilePage() {
     try {
       await updateProfile(auth.currentUser, { displayName });
       toast({ title: 'Profile updated successfully!' });
-      // The auth context will update automatically on next refresh or state change
+      // The user object in useAuth will refresh on the next page load or state change in AuthProvider.
+      // For immediate UI update, you could manually refetch or update the user state in the context.
     } catch (error: any) {
       toast({ title: 'Error updating profile', description: error.message, variant: 'destructive' });
     } finally {
@@ -47,7 +48,7 @@ export default function ProfilePage() {
   };
 
   if (loading || !user) {
-    return <div className="flex justify-center items-center h-screen"><p>Loading...</p></div>;
+    return <div className="flex justify-center items-center h-screen"><Loader2 className="h-8 w-8 animate-spin" /></div>;
   }
 
   return (
@@ -62,8 +63,7 @@ export default function ProfilePage() {
             <CardTitle className="text-3xl font-headline">{user.displayName || 'User Profile'}</CardTitle>
             <CardDescription>{user.email}</CardDescription>
             <div className="flex justify-center gap-2 mt-2">
-                <Badge variant="secondary">{user.role}</Badge>
-                {user.role === 'owner' && <Badge className="bg-primary text-primary-foreground">Owner</Badge>}
+                <Badge variant={user.role === 'owner' ? 'default' : 'secondary'}>{user.role}</Badge>
             </div>
           </CardHeader>
           <CardContent>

@@ -7,7 +7,7 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase/firebase';
 
 export interface AuthUser extends User {
-  role?: 'user' | 'premium' | 'owner';
+  role: 'user' | 'premium' | 'owner';
 }
 
 interface AuthContextType {
@@ -35,20 +35,21 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (firebaseUser) {
         const userDocRef = doc(db, 'users', firebaseUser.uid);
         const userDoc = await getDoc(userDocRef);
+        let userRole: 'user' | 'premium' | 'owner' = 'user';
+
         if (userDoc.exists()) {
-          const userData = userDoc.data();
-          setUser({ ...firebaseUser, role: userData.role || 'user' });
+          userRole = userDoc.data()?.role || 'user';
         } else {
-           const role = firebaseUser.email === 'rsah0123456@gmail.com' ? 'owner' : 'user';
-           const newUser = {
+          userRole = firebaseUser.email === 'rsah0123456@gmail.com' ? 'owner' : 'user';
+          const newUser = {
             uid: firebaseUser.uid,
             email: firebaseUser.email,
-            role: role,
+            role: userRole,
             createdAt: new Date(),
           };
           await setDoc(userDocRef, newUser);
-          setUser({ ...firebaseUser, role: role });
         }
+        setUser({ ...firebaseUser, role: userRole });
       } else {
         setUser(null);
       }
