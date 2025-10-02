@@ -51,7 +51,7 @@ export default function WebDevNotesPage() {
              <div className="p-4 bg-muted/50 rounded-lg font-code">
               <pre>
                 <code>
-                  {'<!DOCTYPE html>\n<html>\n<head>\n  <title>My First Page</title>\n</head>\n<body>\n  <h1>Hello, World!</h1>\n  <p>This is a paragraph.</p>\n</body>\n</html>'}
+                  {'<!DOCTYPE html>\\n<html>\\n<head>\\n  <title>My First Page</title>\\n</head>\\n<body>\\n  <h1>Hello, World!</h1>\\n  <p>This is a paragraph.</p>\\n</body>\\n</html>'}
                 </code>
               </pre>
             </div>
@@ -73,7 +73,7 @@ export default function WebDevNotesPage() {
             <div className="p-4 bg-muted/50 rounded-lg font-code">
               <pre>
                 <code>
-                  {'body {\n  font-family: sans-serif;\n  background-color: #f0f0f0;\n}\n\nh1 {\n  color: #333;\n  text-align: center;\n}'}
+                  {'body {\\n  font-family: sans-serif;\\n  background-color: #f0f0f0;\\n}\\n\\nh1 {\\n  color: #333;\\n  text-align: center;\\n}'}
                 </code>
               </pre>
             </div>
@@ -105,7 +105,7 @@ export default function WebDevNotesPage() {
              <div className="p-4 bg-muted/50 rounded-lg font-code">
               <pre>
                 <code>
-                  {'// Change the text of the h1 element\ndocument.querySelector(\'h1\').textContent = "Hello, JavaScript!";\n\n// Add a new element\nconst newPara = document.createElement(\'p\');\nnewPara.textContent = "This was added by JS.";\ndocument.body.appendChild(newPara);'}
+                  {'// Change the text of the h1 element\\ndocument.querySelector(\\'h1\\').textContent = "Hello, JavaScript!";\\n\\n// Add a new element\\nconst newPara = document.createElement(\\'p\\');\\nnewPara.textContent = "This was added by JS.";\\ndocument.body.appendChild(newPara);'}
                 </code>
               </pre>
             </div>
@@ -113,7 +113,7 @@ export default function WebDevNotesPage() {
              <div className="p-4 bg-muted/50 rounded-lg font-code">
               <pre>
                 <code>
-                  {'const button = document.querySelector(\'button\');\nbutton.addEventListener(\'click\', () => {\n  alert(\'Button was clicked!\');\n});'}
+                  {'const button = document.querySelector(\\'button\\');\\nbutton.addEventListener(\\'click\\', () => {\\n  alert(\\'Button was clicked!\\');\\n});'}
                 </code>
               </pre>
             </div>
