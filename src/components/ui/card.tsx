@@ -1,4 +1,3 @@
-
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
@@ -32,7 +31,7 @@ CardHeader.displayName = "CardHeader"
 
 const CardTitle = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLHeadingElement>
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
@@ -47,7 +46,7 @@ CardTitle.displayName = "CardTitle"
 
 const CardDescription = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLParagraphElement>
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
